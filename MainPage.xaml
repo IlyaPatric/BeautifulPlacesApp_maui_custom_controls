@@ -8,10 +8,10 @@
              x:Class="BeautifulPlacesApp.MainPage"
              BackgroundColor="#F6F6F6">
 
-    <Grid RowDefinitions="Auto, *" Margin="20,0">
+    <Grid RowDefinitions="Auto, *">
 
         <!-- Search fields -->
-        <Grid ColumnDefinitions="Auto, *, Auto" Margin="0, 16" ColumnSpacing="8">
+        <Grid ColumnDefinitions="Auto, *, Auto" Margin="20, 16" ColumnSpacing="8">
 
             <ImageButton Source="back.png" BackgroundColor="Transparent"
                          WidthRequest="24" HeightRequest="24" />
@@ -27,7 +27,8 @@
 
         <ScrollView Grid.Row="1">
             <Grid RowDefinitions="*, Auto"
-                  RowSpacing="24">
+                  RowSpacing="24"
+                  Margin="20,0">
 
                 <!-- BeautifulPlaces list -->
                 <CollectionView ItemsSource="{Binding BeautifulPlacesList}">
