@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:BeautifulPlacesApp.ViewModels"
+             xmlns:customControl="clr-namespace:BeautifulPlacesApp.CustomControls"
+             x:DataType="viewmodel:BeautifulPlacesViewModel"
+             x:Class="BeautifulPlacesApp.MainPage"
+             BackgroundColor="#F6F6F6">
+
+    <Grid RowDefinitions="Auto, *" Margin="20,0">
+
+        <!-- Search fields -->
+        <Grid ColumnDefinitions="Auto, *, Auto" Margin="0, 16" ColumnSpacing="8">
+
+            <ImageButton Source="back.png" BackgroundColor="Transparent"
+                         WidthRequest="24" HeightRequest="24" />
+
+            <customControl:SearchEntry Grid.Column="1"
+                                       Placeholder="Searching.."
+                                       Text="{Binding MyText}"
+                                       Command="{Binding DeleteCharacters}" />
+
+            <ImageButton Grid.Column="2" Source="setting.png" BackgroundColor="Transparent"
+                         WidthRequest="24" HeightRequest="24" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="*, Auto"
+                  RowSpacing="24">
+
+                <!-- BeautifulPlaces list -->
+                <CollectionView ItemsSource="{Binding BeautifulPlacesList}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="28" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <customControl:CardLarge />
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Try something different list -->
+                <VerticalStackLayout Grid.Row="1" Spacing="8">
+                    <Label Text="Try Something Different"
+                           FontFamily="RobotoMedium" TextColor="{StaticResource TextColor}"
+                           FontSize="20" />
+
+                    <CollectionView ItemsSource="{Binding SomethingDifferents}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                                <customControl:CardSmall />
+                                
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
