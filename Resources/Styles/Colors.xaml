@@ -20,6 +20,7 @@
     
     <Color x:Key="TextColor">#11100E</Color>
     <Color x:Key="TextColorLight">#A1A1A1</Color>
+    <Color x:Key="IconColor">#4C4C4C</Color>
     
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

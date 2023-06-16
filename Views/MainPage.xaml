@@ -8,21 +8,43 @@
              x:Class="BeautifulPlacesApp.MainPage"
              BackgroundColor="#F6F6F6">
 
+    <!-- Icons -->
+    <ContentPage.Resources>
+        <x:String x:Key="arrow-left">&#xf060;</x:String>
+        <x:String x:Key="settings">&#xf1de;</x:String>
+    </ContentPage.Resources>
+    
+    
     <Grid RowDefinitions="Auto, *">
 
         <!-- Search fields -->
         <Grid ColumnDefinitions="Auto, *, Auto" Margin="20, 16" ColumnSpacing="8">
 
-            <ImageButton Source="back.png" BackgroundColor="Transparent"
-                         WidthRequest="24" HeightRequest="24" />
+            <ImageButton WidthRequest="24"
+                         HeightRequest="24" >
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="FAS" 
+                                     Glyph="{StaticResource arrow-left}" 
+                                     Color="{StaticResource IconColor}"
+                                     Size="24"/>
+                </ImageButton.Source>
+            </ImageButton>
 
             <customControl:SearchEntry Grid.Column="1"
                                        Placeholder="Searching.."
                                        Text="{Binding MyText}"
                                        Command="{Binding DeleteCharacters}" />
 
-            <ImageButton Grid.Column="2" Source="setting.png" BackgroundColor="Transparent"
-                         WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="2" 
+                         WidthRequest="24"
+                         HeightRequest="24" >
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="FAS"
+                                     Glyph="{StaticResource settings}"
+                                     Color="{StaticResource IconColor}"
+                                     Size="24"/>
+                </ImageButton.Source>
+            </ImageButton>
         </Grid>
 
         <ScrollView Grid.Row="1">

@@ -5,6 +5,10 @@
              x:Name="Search"
              x:Class="BeautifulPlacesApp.CustomControls.SearchEntry">
     
+    <ContentView.Resources>
+        <x:String x:Key="search-glass">&#xf002;</x:String>
+    </ContentView.Resources>
+    
     <Frame BindingContext="{x:Reference Search}"
            BackgroundColor="{StaticResource White}"
            BorderColor="{StaticResource White}"
@@ -14,10 +18,16 @@
               ColumnSpacing="4"
               Margin="8,0">
             
-            <ImageButton Source="search.png"
-                         WidthRequest="16"
+            <ImageButton WidthRequest="16"
                          HeightRequest="16"
-                         Command="{Binding Command}"/>
+                         Command="{Binding Command}">
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="FAS"
+                                     Glyph="{StaticResource search-glass}"
+                                     Color="{StaticResource IconColor}"
+                                     Size="16" />
+                </ImageButton.Source>
+            </ImageButton>
             <Entry Grid.Column="1" 
                    Placeholder="{Binding Placeholder}"
                    Text="{Binding Text}"/>

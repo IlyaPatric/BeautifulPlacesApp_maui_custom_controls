@@ -16,6 +16,10 @@ public static class MauiProgram
 				fonts.AddFont("Roboto-Light.ttf", "RobotoLight");
 				fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
 				fonts.AddFont("Roboto-Medium.ttf", "RobotoMedium");
+				
+				fonts.AddFont("Brands-Regular-400.otf", "FAB");
+				fonts.AddFont("Free-Regular-400.otf", "FAR");
+				fonts.AddFont("Free-Solid-900.otf", "FAS");
 			});
 		
 		// Убираю нижнюю полоску у Entry в Android app
